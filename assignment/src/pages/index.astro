@@ -1,0 +1,44 @@
+---
+import Slider from '../components/Slider.astro';
+import VideoGrid from '../components/VideoGrid.astro';
+import Map from '../components/Map.astro'
+import ButtonGrid from "../components/ButtonGrid.astro";
+import Tabs from "../components/Tabs.astro"
+import Footer from "../components/Footer.astro"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>UI Assignment</title>
+	</head>
+	<body>
+		<div class="w-full flex flex-row justify-center gap-4 px-6 py-3">
+			<a href="/login/" target="_blank" rel="noopener noreferrer">
+				<i class="fa-solid fa-bars text-2xl text-gray-900"></i>
+			</a>
+			<div class="flex flex-col justify-center gap-12 md:gap-12 w-10/12">
+				<Slider />
+				<VideoGrid />
+				<ButtonGrid />
+				<Tabs />
+				<Footer />
+			</div>
+			<a href="#" id="openModalLink">
+				<i class="fa-solid fa-bars text-2xl text-gray-900"></i>
+			</a>
+		</div>
+		<Map />
+		<!-- Background -->
+		<div class="w-80 h-80 blur-3xl bg-purple-100 absolute top-0 left-0 -z-20"></div>
+		<div class="w-80 h-80 blur-3xl bg-yellow-100 absolute top-0 right-0 -z-20"></div>
+		<div class="w-80 h-80 blur-3xl bg-red-100 absolute bottom-0 left-0 -z-20"></div>
+		<div class="w-80 h-80 blur-3xl bg-blue-100 absolute bottom-0  right-0 -z-20"></div>
+		<script src="https://kit.fontawesome.com/cd5f3531de.js" crossorigin="anonymous"></script>
+	</body>
+</html>

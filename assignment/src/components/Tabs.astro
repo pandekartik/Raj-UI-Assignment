@@ -1,0 +1,68 @@
+---
+import Video from "./Video.astro";
+import image from '../assets/image.webp'
+---
+<div class="flex flex-col items-center gap-5 mt-5 w-full">
+  <div class="tabs flex gap-4">
+    <div class="tab px-4 lg:px-24 py-4 rounded-md bg-yellow-400 hover:bg-gray-800 hover:text-white cursor-pointer" onclick="changeTab(0)">Contact</div>
+    <div class="tab px-4 lg:px-24 py-4 rounded-md hover:bg-gray-800 hover:text-white cursor-pointer" onclick="changeTab(1)">About</div>
+    <div class="tab px-4 lg:px-24 py-4 rounded-md hover:bg-gray-800 hover:text-white cursor-pointer" onclick="changeTab(2)">Image</div>
+    <div class="tab px-4 lg:px-24 py-4 rounded-md hover:bg-gray-800 hover:text-white cursor-pointer" onclick="changeTab(3)">Video</div>
+  </div>
+  
+  <div class="w-full rounded-md bg-gray-100 flex justify-center items-center py-8 px-4">
+    <div id="tab0" class="content">
+        <div class="bg-white p-8 rounded-lg shadow-md md:w-96">
+            <h1 class="text-2xl font-semibold mb-4">Contact Us</h1>
+            <form>
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-600 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-600 mb-1">Email</label>
+                    <input type="email" id="email" name="email" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-500" required>
+                </div>
+                <button type="submit" class="mt-4 bg-gray-800 hover:bg-gray-950 text-white px-4 py-2 rounded-md w-full focus:outline-none focus:ring focus:border-gray-500">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div id="tab1" class="content hidden">
+        <div class="p-8 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">About Us</h2>
+            <p>Welcome to our adventure-filled world where experiences await at every corner. Embark on a journey of discovery, excitement, and wonder as we take you through breathtaking landscapes and unforgettable moments.</p>
+        </div>
+    </div> 
+    <div id="tab2" class="content hidden">
+        <div class="p-8 rounded-lg">
+            <img src={image} alt="adventure" class="max-h-64"/>
+        </div>
+    </div>
+    <div id="tab3" class="content hidden">
+        <div class="w-full">
+            <Video url={"https://www.youtube.com/embed/VwyuQoVjBmU"}/>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+function changeTab(tabIndex) {
+  const contentContainers = document.querySelectorAll('.content');
+  contentContainers.forEach((content) => {
+    content.classList.add('hidden');
+  });
+
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach((tab) => {
+    tab.classList.remove('bg-yellow-400'); 
+  });
+  
+  const targetContent = document.getElementById(`tab${tabIndex}`);
+  targetContent.classList.remove('hidden');
+
+  const targetTab = document.querySelector(`.tab:nth-child(${tabIndex + 1})`);
+  targetTab.classList.add('bg-yellow-400'); 
+}
+</script>
+

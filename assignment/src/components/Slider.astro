@@ -1,0 +1,31 @@
+---
+---
+<div id="splide" class="splide w-full bg-gray-800 py-40 px-4 rounded-md">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <h3 class="font-bold text-center text-yellow-200 text-xl md:text-3xl">Discover a World of Possibilities</h3>
+        </li>
+        <li class="splide__slide">
+          <h3 class="font-bold text-center text-blue-200 text-xl md:text-3xl">Unleash Your Creativity Today</h3>
+        </li>
+        <li class="splide__slide">
+          <h3 class="font-bold text-center text-red-200 text-xl md:text-3xl">Experience Adventure Like Never Before</h3>
+        </li>
+        <li class="splide__slide">
+          <h3 class="font-bold text-center text-purple-200 text-xl md:text-3xl">Elevate Your Senses with Our Innovations</h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Initialize Splide -->
+  <script>
+    new Splide('#splide',{
+        type: 'loop', 
+        arrows: false,
+        autoplay: true,
+        interval: 1200,
+        pagination: false,
+    }).mount();
+  </script>

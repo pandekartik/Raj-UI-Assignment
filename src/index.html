@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="splide" class="splide w-full bg-gray-800 py-40">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <h3 class="font-bold text-center text-yellow-200 text-3xl">Discover a World of Possibilities</h3>
+            </li>
+            <li class="splide__slide">
+              <h3 class="font-bold text-center text-blue-200 text-3xl">Unleash Your Creativity Today</h3>
+            </li>
+            <li class="splide__slide">
+              <h3 class="font-bold text-center text-red-200 text-3xl">Experience Adventure Like Never Before</h3>
+            </li>
+            <li class="splide__slide">
+              <h3 class="font-bold text-center text-white text-3xl">Elevate Your Senses with Our Innovations</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Initialize Splide -->
+      <script>
+        new Splide('#splide',{
+            type: 'loop', 
+            arrows: false,
+            autoplay: true,
+            interval: 1200,
+        }).mount();
+      </script>
+</body>
+</html>

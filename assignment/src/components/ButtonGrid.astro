@@ -1,0 +1,38 @@
+---
+
+---
+<div class="w-full flex flex-col justify-center gap-4 md:flex-row md:gap-12">
+    <button onclick="openModal('modal1')" class="bg-blue-300 text-blue-900 border-2 hover:border-blue-800 font-bold px-8 py-4 rounded-md md:w-1/4">Tab 1</button>
+    <button onclick="openModal('modal2')" class="bg-purple-300 text-purple-900 border-2 hover:border-purple-800 font-bold px-8 py-4 rounded-md md:w-1/4" >Tab 2</button>
+</div>
+
+<div id="modal1" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+    <div class="p-6 mx-12 rounded-lg shadow-lg md:w-1/2 bg-blue-100">
+        <div class="pb-12 flex flex-col gap-2">
+            <h1 class="text-left text-2xl font-bold text-gray-950">Welcome to Tab 1</h1>
+            <p class="text-left text-base text-gray-500">This is the content of Tab 1's modal. Feel free to explore the features and functionality of this tab.</p>
+        </div>
+        <button onclick="closeModal('modal1')" class="mt-4 bg-gray-800 hover:bg-gray-950 text-white px-4 py-2 rounded-md w-full">Close</button>
+    </div>
+</div>
+<div id="modal2" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden">
+    <div class="p-6 mx-12 rounded-lg shadow-lg md:w-1/2 bg-purple-100">
+        <div class="pb-12 flex flex-col gap-2">
+            <h1 class="text-left text-2xl font-bold text-gray-950">Discover Tab 2</h1>
+            <p class="text-left text-base text-gray-500">Welcome to Tab 2's modal. Here, you can learn more about the offerings and benefits of Tab 2.</p>
+        </div>
+        <button onclick="closeModal('modal2')" class="mt-4 bg-gray-800 hover:bg-gray-950 text-white px-4 py-2 rounded-md w-full">Close</button>
+    </div>
+</div>
+
+<script is:inline>
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.remove('hidden');
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.add('hidden');
+    }
+</script> 
